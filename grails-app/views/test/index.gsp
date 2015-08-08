@@ -8,7 +8,7 @@
 	</head>
 	<body>
         <b>LIVE CHAT EXAMPLES:
-            Random HTTP Session Chat <chat:customerChatButton/><br>
+            Random HTTP Session Chat <chat:customerChatButton user="vahid"/><br>
          </b>
 <g:form action="index2">
 <label>Chat username</label><g:textField name="username"/>
