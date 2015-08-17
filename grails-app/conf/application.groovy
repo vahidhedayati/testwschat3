@@ -27,3 +27,13 @@ wschat.store_live_messages=true  // store records of offline messaging
 wschat.enable_AI=true  // enable Aritificial Intelligence ? refer to ChatAI.groovy for example and understanding
 wschat.liveChatTitle="My Live chat"
 
+
+//wschat.dbstore_user_messages=true
+wschat.addFile='false'
+wschat.addGame='false'
+
+wschat.liveChatAskName='true'
+wschat.liveChatAskEmail='true'
+wschat.enable_Chat_Bot=true
+wschat.enable_Chat_AI=true
+wschat.enable_Chat_BadWords=true
