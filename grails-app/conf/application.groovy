@@ -1,8 +1,8 @@
 wschat.defaultperm='admin'
 wschat.rooms = ['fred','smith','room3']
 wschat.showtitle="no"
-//wschat.hostname='localhost:8080'
-wschat.hostname='192.168.1.196:8080'
+wschat.hostname='localhost:8080'
+//wschat.hostname='192.168.1.196:8080'
 stunServers { iceServers=[ [url: 'stun:stun.l.google.com:19302'] ] }
 wschat.send.leftroom='yes'
 wschat.send.joinroom='yes'
