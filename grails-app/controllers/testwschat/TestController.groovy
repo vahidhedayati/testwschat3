@@ -33,4 +33,41 @@ class TestController {
 		
 
 	}
+	
+	def livechat() { 
+		
+	}
+	def livechat2() {
+		//List colours=['blackyellow','redblack','blackred', 'orangeblack','whiteblack']
+		Map colours=[:]
+		colours.blackyellow=["background":"black","color":"yellow"]
+		colours.redblack=["background":"red","color":"black"]
+		
+		colours.blackred=["background":"black","color":"red"]
+		colours.orangeblack=["background":"orange","color":"black"]
+		colours.whiteblack=["background":"white","color":"black"]
+		[colours:colours]
+		
+	}
+	def livechat3() {
+		Map colours=[:]
+		colours.blackyellow=["background":"black","color":"yellow"]
+		colours.redblack=["background":"red","color":"black"]
+		colours.blackred=["background":"black","color":"red"]
+		colours.orangeblack=["background":"orange","color":"black"]
+		colours.whiteblack=["background":"white","color":"black"]
+		
+		def inactiveLCTitle=colours."${params.inactiveLCTitle}"
+		def inactiveLCBody=colours."${params.inactiveLCBody}"
+		def activeLCTitle=colours."${params.activeLCTitle}"
+		def activeLCBody=colours."${params.activeLCBody}"
+		println "params are ${params}"
+		[colours:colours, activeLCBody:activeLCBody, activeLCTitle:activeLCTitle,inactiveLCBody:inactiveLCBody,inactiveLCTitle:inactiveLCTitle]
+	}
+	def livechatCustomStyle() {
+	}
+	
+	def monitorLiveChat() {
+		
+	}
 }

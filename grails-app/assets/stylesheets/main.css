@@ -567,3 +567,68 @@ a.skip {
     position: absolute;
     left: -9999px;
 }
+
+#msgBroadcast {
+	background: #000000;
+	color: #FFF;
+	width:100%;
+}
+#msgReceived {
+	background: #FF0000;
+	color: #FFF;
+	width:100%;
+}
+#msgSent {
+	background: #0000FF;
+	color: #000;
+	width:100%;
+}
+.msgPersonSent {
+	background: #000;
+	color: #fff;
+}
+.msgPersonReceived {
+	background: #2a12a1;
+	color: #FFF;
+}
+.msgSentContent {
+	background: #DADADA;
+	color: #000;
+}
+.msgPersonReceived {
+	background: #2a12a1;
+	color: #FFF;
+}
+.msgReceivedContent {
+	background: #00aaaa;
+	color: #000;
+}
+.roomPerson {
+	background: #aaa000;
+	color: #000;
+}
+.roomMessage {
+	background: #00fFFF;
+	color: #000;
+}
+
+/*configure message box that is shown to chat room or live Chat*/
+#sendMessage #messageBox {
+	background: #FFF;
+	color: #000;
+	height: 1em;
+}
+
+/*configure message box that is shown to chat room or live Chat*/
+#sendMessage #messageBox {
+	background: #FFF;
+	color: #000;
+	height: 1em;
+}
+/*configure button
+#sendMessage #sendBtn {
+	/*display:none;*/
+	
+}
+*/
+
