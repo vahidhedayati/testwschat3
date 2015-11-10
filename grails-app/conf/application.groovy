@@ -1,7 +1,43 @@
+wschat.enableSecurity='true'
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'grails.plugin.wschat.ChatAuth'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'grails.plugin.wschat.ChatAuthChatRole'
+grails.plugin.springsecurity.authority.className = 'grails.plugin.wschat.ChatRole'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+        '/':                ['permitAll'],
+        '/error':           ['permitAll'],
+        '/index':           ['permitAll'],
+        '/index.gsp':       ['permitAll'],
+        '/shutdown':        ['permitAll'],
+        '/assets/**':       ['permitAll'],
+        '/**/js/**':        ['permitAll'],
+        '/**/css/**':       ['permitAll'],
+        '/**/images/**':    ['permitAll'],
+        '/**/favicon.ico':  ['permitAll'],
+        '/wsChat/**':       ['permitAll'],
+        '/wsCamEndpoint/**':		['permitAll'],
+        '/wsChatEndpoint/**':		['permitAll'],
+        '/wsChatFileEndpoint/**':	['permitAll'],
+        '/TicTacToeServer/**':		['permitAll'],
+        '/wsCamEndpoint':		['permitAll'],
+        '/wsChatEndpoint':		['permitAll'],
+        '/wsChatFileEndpoint':	['permitAll'],
+        '/TicTacToeServer':		['permitAll'],
+        '/dbconsole/**':       ['permitAll'],
+        '/ChatClientEndpoint/**':	['permitAll'],
+        '/WsChatClientEndpoint/**':	['permitAll'],
+        '/ChatClientEndpoint':	['permitAll'],
+        '/WsChatClientEndpoint':	['permitAll']
+]
+
+grails.plugin.springsecurity.securityConfigType = "Annotation"
+
 wschat.defaultperm='admin'
 wschat.rooms = ['fred','smith','room3']
 wschat.showtitle="no"
 wschat.hostname='localhost:8080'
+boselecta.hostname = 'localhost:8080'
+boselecta.appName = 'no'
 //wschat.hostname='192.168.1.196:8080'
 stunServers { iceServers=[ [url: 'stun:stun.l.google.com:19302'] ] }
 wschat.send.leftroom='yes'
@@ -12,7 +48,7 @@ wschat.dbstore=true
 wschat.dbsupport='yes'
 wschat.dbstore_pm_messages=true
 wschat.dbstore_room_messages=true
-wschat.debug=true
+wschat.debug='true'
 
 wschat.dbstore_user_messages=true
 

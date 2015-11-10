@@ -604,11 +604,11 @@ a.skip {
 	color: #000;
 }
 .roomPerson {
-	background: #aaa000;
+	background: #aaa000 !important;
 	color: #000;
 }
 .roomMessage {
-	background: #00fFFF;
+	background: #00fFFF !important;
 	color: #000;
 }
 

@@ -1,5 +1,4 @@
-import grails.plugin.wschat.ChatAI
-import grails.plugin.wschat.ChatBadWords
+import grails.plugin.wschat.*
 
 class BootStrap {
 
@@ -19,10 +18,47 @@ class BootStrap {
 		//minutes months hours years days
 		ChatBadWords.findOrSaveWhere(input:'pants', output: '/banuser', duration: 1  ,period: 'minutes')
 		ChatBadWords.findOrSaveWhere(input:'bastard', output: '/banuser', duration: 1  ,period: 'months')
-		
-		
-    }
+
+		//Spring security configuration to add me as a user and admin role
+		def adminRole = new ChatRole('ROLE_ADMIN').save()
+		def userRole = new ChatRole('ROLE_USER').save()
+
+		def testUser = new ChatAuth('me', 'password').save()
+
+		ChatAuthChatRole.create testUser, adminRole, true
+		ChatAuthChatRole.create testUser, userRole, true
+
+
+		addUser('admin','test@test.com')
+		addUser('admin1','test1@test.com')
+		addUser('admin2','test2@test.com')
+
+	}
     def destroy = {
     }
+	void addUser(String username,String email) {
+		ChatUser user
+		ChatPermissions perm
+		String defaultPermission = 'admin'
+		if (defaultPermission) {
+			perm = ChatPermissions.findByName(defaultPermission)
+			perm = perm ? perm : new ChatPermissions(name: defaultPermission).save(flush: true)
+			user = ChatUser.findByUsername(username)
+			if (!user) {
+				def addlog = addLog()
+				user = new ChatUser(username: username, permissions: perm, log: addlog, offlog: addlog).save(flush:true)
+			}
+			ChatUserProfile.findOrSaveWhere(chatuser:user, email:"${email}").save(flush:true)
+		}
+
+	}
+
+	private ChatLog addLog() {
+		ChatLog logInstance = new ChatLog(messages: [])
+		if (!logInstance.save()) {
+			log.debug "${logInstance.errors}"
+		}
+		return logInstance
+	}
 }
 
