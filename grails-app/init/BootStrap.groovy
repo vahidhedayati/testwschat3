@@ -29,7 +29,7 @@ class BootStrap {
 		ChatAuthChatRole.create testUser, userRole, true
 
 
-		addUser('admin','test@test.com')
+		addUser('me','test@test.com')
 		addUser('admin1','test1@test.com')
 		addUser('admin2','test2@test.com')
 
