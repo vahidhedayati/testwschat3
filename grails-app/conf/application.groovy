@@ -1,4 +1,4 @@
-wschat.enableSecurity='true'
+wschat.enableSecurity='false'
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'grails.plugin.wschat.ChatAuth'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'grails.plugin.wschat.ChatAuthChatRole'
@@ -28,7 +28,9 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/ChatClientEndpoint/**':	['permitAll'],
         '/WsChatClientEndpoint/**':	['permitAll'],
         '/ChatClientEndpoint':	['permitAll'],
-        '/WsChatClientEndpoint':	['permitAll']
+        '/WsChatClientEndpoint':	['permitAll'],
+        '/**':	['permitAll'],
+        '/**/**':	['permitAll']
 ]
 
 grails.plugin.springsecurity.securityConfigType = "Annotation"
