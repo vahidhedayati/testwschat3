@@ -2,7 +2,7 @@ Getting it to work in production
 
 
 ### Installing mysql
-
+```
 #Centos/Redhat/Fedora
 yum install mysql mysql-server
 #Ubuntu/Debian/Mint etc
@@ -14,14 +14,14 @@ grant usage on chat.* to chatdbuser@localhost identified by 'wooha';
 grant all privileges on chat.* to chatdbuser@localhost;
 
 exit
-
+```
 
 ##configuring your mysql configuration in your app
 
 1. add mysql dependency add to build.gradle:
-
+```
  runtime 'mysql:mysql-connector-java:5.1.20'
-
+```
 
 2. configure your db in application.yml so replace exisiing block with something like this
 ```
