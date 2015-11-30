@@ -1,4 +1,4 @@
-package testwschat3
+package testchat
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

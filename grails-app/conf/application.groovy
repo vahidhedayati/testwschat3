@@ -1,39 +1,41 @@
-wschat.enableSecurity='false'
+wschat.enableSecurity='true'
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'grails.plugin.wschat.ChatAuth'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'grails.plugin.wschat.ChatAuthChatRole'
 grails.plugin.springsecurity.authority.className = 'grails.plugin.wschat.ChatRole'
+//grails.plugin.springsecurity.securityConfigType = "Annotation"
+grails.plugins.springsecurity.securityConfigType = 'InterceptUrlMap'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/wschat'
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        '/':                ['permitAll'],
-        '/error':           ['permitAll'],
-        '/index':           ['permitAll'],
-        '/index.gsp':       ['permitAll'],
-        '/shutdown':        ['permitAll'],
-        '/assets/**':       ['permitAll'],
-        '/**/js/**':        ['permitAll'],
-        '/**/css/**':       ['permitAll'],
-        '/**/images/**':    ['permitAll'],
-        '/**/favicon.ico':  ['permitAll'],
-        '/wsChat/**':       ['permitAll'],
-        '/wsChatAdmin/**':       ['permitAll'],
-        '/wsCamEndpoint/**':		['permitAll'],
-        '/wsChatEndpoint/**':		['permitAll'],
-        '/wsChatFileEndpoint/**':	['permitAll'],
-        '/TicTacToeServer/**':		['permitAll'],
-        '/wsCamEndpoint':		['permitAll'],
-        '/wsChatEndpoint':		['permitAll'],
-        '/wsChatFileEndpoint':	['permitAll'],
-        '/TicTacToeServer':		['permitAll'],
-        '/dbconsole/**':       ['permitAll'],
-        '/ChatClientEndpoint/**':	['permitAll'],
-        '/WsChatClientEndpoint/**':	['permitAll'],
-        '/ChatClientEndpoint':	['permitAll'],
-        '/WsChatClientEndpoint':	['permitAll'],
-        '/**':	['permitAll'],
-        '/**/**':	['permitAll']
+        '/error':           ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/index':           ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/index.gsp':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/shutdown':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/assets/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/js/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/css/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/images/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/favicon.ico':  ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsChat/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsChatAdmin/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsCamEndpoint/**':		['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsChatEndpoint/**':		['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsChatFileEndpoint/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/TicTacToeServer/**':		['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsCamEndpoint':		['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsChatEndpoint':		['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/wsChatFileEndpoint':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/TicTacToeServer':		['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/dbconsole/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/test/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/ChatClientEndpoint/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/WsChatClientEndpoint/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/ChatClientEndpoint':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/WsChatClientEndpoint':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**':        ['IS_AUTHENTICATED_ANONYMOUSLY']
 ]
 
-grails.plugin.springsecurity.securityConfigType = "Annotation"
 
 wschat.defaultperm='admin'
 wschat.rooms = ['fred','smith','room3']
