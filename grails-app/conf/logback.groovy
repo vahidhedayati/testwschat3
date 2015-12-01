@@ -25,5 +25,5 @@ if (Environment.isDevelopmentMode() && targetDir) {
 
 }
 
-   logger 'grails.plugin.springsecurity', DEBUG
-    logger 'org.springframework.security', DEBUG
+   //logger 'grails.plugin.springsecurity', DEBUG
+   // logger 'org.springframework.security', DEBUG
