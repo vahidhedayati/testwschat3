@@ -1,3 +1,5 @@
+package test
+
 class UrlMappings {
 
     static mappings = {
