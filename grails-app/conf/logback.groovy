@@ -20,4 +20,10 @@ if (Environment.isDevelopmentMode() && targetDir) {
         }
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
+    logger("StackTrace", DEBUG, ['FULL_STACKTRACE'], false)
+	logger 'grails.plugin.wschat', DEBUG, ['STDOUT']
+
 }
+
+   //logger 'grails.plugin.springsecurity', DEBUG
+   // logger 'org.springframework.security', DEBUG
