@@ -37,12 +37,14 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 grails.plugin.springsecurity.securityConfigType = "Annotation"
 
 
+wschat.wsProtocol='wss'
+wschat.siteProtocol='https'
+
 wschat.defaultperm='admin'
 wschat.rooms = ['fred','smith','room3']
 wschat.showtitle="no"
-wschat.hostname='localhost:8080'
-wschat.hostname = 'localhost:8080'
-wschat.appName = 'no'
+wschat.hostname='localhost:8443'
+boselecta.appName = 'no'
 //wschat.hostname='192.168.1.196:8080'
 stunServers { iceServers=[ [url: 'stun:stun.l.google.com:19302'] ] }
 wschat.send.leftroom='yes'
@@ -65,7 +67,7 @@ wschat.liveChatUsername='masterv'  // this is the nickname upon them joining a l
 wschat.liveContactName='Mr V'  // this is the person that email title is set to
 wschat.emailFrom="me@domain.com"  //this is for sending emails
 wschat.store_live_messages=true  // store records of offline messaging
-wschat.enable_AI=true  // enable Aritificial Intelligence ? refer to ChatAI.groovy for example and understanding
+wschat.enable_AI=false  // enable Aritificial Intelligence ? refer to ChatAI.groovy for example and understanding
 wschat.liveChatTitle="My Live chat"
 
 
@@ -75,6 +77,6 @@ wschat.addGame='false'
 
 wschat.liveChatAskName='true'
 wschat.liveChatAskEmail='true'
-wschat.enable_Chat_Bot=true
+wschat.enable_Chat_Bot=false
 wschat.enable_Chat_AI=true
-wschat.enable_Chat_BadWords=true
+wschat.enable_Chat_BadWords=false
