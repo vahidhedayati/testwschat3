@@ -1,3 +1,5 @@
+package testwschat4
+
 class UrlMappings {
 
     static mappings = {

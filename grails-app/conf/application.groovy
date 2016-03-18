@@ -1,48 +1,50 @@
-//wschat.enableSecurity='true'
+wschat.enableSecurity='false'
 // Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.active = false        
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'grails.plugin.wschat.ChatAuth'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'grails.plugin.wschat.ChatAuthChatRole'
 grails.plugin.springsecurity.authority.className = 'grails.plugin.wschat.ChatRole'
-//grails.plugin.springsecurity.securityConfigType = "Annotation"
-grails.plugins.springsecurity.securityConfigType = 'InterceptUrlMap'
+grails.plugin.springsecurity.securityConfigType = "Annotation"
+//grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/wschat'
 grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        '/error':           ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/index':           ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/index.gsp':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/shutdown':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/assets/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/**/js/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/**/css/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/**/images/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/**/favicon.ico':  ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsChat/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsChatAdmin/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsCamEndpoint/**':		['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsChatEndpoint/**':		['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsChatFileEndpoint/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/TicTacToeServer/**':		['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsCamEndpoint':		['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsChatEndpoint':		['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/wsChatFileEndpoint':	['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/TicTacToeServer':		['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/dbconsole/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/test/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/ChatClientEndpoint/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/WsChatClientEndpoint/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/ChatClientEndpoint':	['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/WsChatClientEndpoint':	['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/**':        ['IS_AUTHENTICATED_ANONYMOUSLY']
+	 [pattern: '/**',    access:   ['IS_AUTHENTICATED_ANONYMOUSLY']]
 ]
-
+plugin.springsecurity.controllerAnnotations.staticRules = [
+        [pattern: '/error',    access:      ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/index',    access:      ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/index.gsp',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/shutdown',    access:   ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/assets/**',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/**/js/**',    access:   ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/**/css/**',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/**/images/**',  access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/**/favicon.ico', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsChat/**',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsChatAdmin/**',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsCamEndpoint/**',    access:   ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsChatEndpoint/**',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsChatFileEndpoint/**',  access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/TicTacToeServer/**',    access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsCamEndpoint',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsChatEndpoint',    access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/wsChatFileEndpoint', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/TicTacToeServer',    access:['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/dbconsole/**',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/test/**',    access:  ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/ChatClientEndpoint/**', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/WsChatClientEndpoint/**', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/ChatClientEndpoint', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/WsChatClientEndpoint',   access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+        [pattern: '/**',    access:   ['IS_AUTHENTICATED_ANONYMOUSLY']]
+]
 
 wschat.defaultperm='admin'
 wschat.rooms = ['fred','smith','room3']
 wschat.showtitle="no"
-wschat.hostname='localhost:8080'
-boselecta.hostname = 'localhost:8080'
-boselecta.appName = 'no'
+//wschat.appName = 'no'
+wschat.addAppName= 'no'
 //wschat.hostname='192.168.1.196:8080'
 stunServers { iceServers=[ [url: 'stun:stun.l.google.com:19302'] ] }
 wschat.send.leftroom='yes'
@@ -75,6 +77,11 @@ wschat.addGame='false'
 
 wschat.liveChatAskName='true'
 wschat.liveChatAskEmail='true'
-wschat.enable_Chat_Bot=true
 wschat.enable_Chat_AI=true
 wschat.enable_Chat_BadWords=true
+
+wschat.enable_Chat_Bot='false'
+
+//wschat.wsProtocol='wss'
+//wschat.siteProtocol='https'
+//wschat.hostname='localhost:8443'
